@@ -1,0 +1,24 @@
+[core]
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
+    editor = vim
+[alias]
+	cl = clone
+	ad = add
+	fe = fetch
+	ci = commit -a -m
+	st = status
+	di = diff
+	br = branch
+	ch = checkout
+	pl = pull --no-ff
+	ps = push
+[diff]
+    patience = true
+[color]
+    ui = auto
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+    grep = auto
