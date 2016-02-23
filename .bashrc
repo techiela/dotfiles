@@ -103,3 +103,12 @@ function gp() {
     fi
 }
 
+# git pull origin {someBranch || develop}
+function gl() {
+    BRANCH=develop
+    if [ $# -gt 0 ]; then
+        BRANCH=$1
+    fi
+    git pull --no-ff origin ${BRANCH}
+}
+
