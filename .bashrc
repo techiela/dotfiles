@@ -91,6 +91,8 @@ alias ..='d ..'
 alias ~~='d ~'
 alias tf='tail -F'
 alias gs='git status'
+alias ga='git add .'
+alias gc='git commit'
 
 # git push origin {current repository} with confirm
 function gp() {
