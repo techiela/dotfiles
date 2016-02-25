@@ -91,10 +91,12 @@ alias ..='d ..'
 alias ~~='d ~'
 alias tf='tail -F'
 alias gs='git status'
+alias gsh='git show'
+alias gl='git log'
 alias ga='git add .'
 alias gc='git commit'
+alias gd='git diff'
 
-# git push origin {current repository} with confirm
 function gp() {
     BRANCH=$(git rev-parse --abbrev-ref HEAD)
     read -p "The branch [${BRANCH}] will be pushed to remote. (y/n)" INPUT
@@ -103,12 +105,10 @@ function gp() {
     fi
 }
 
-# git pull origin {someBranch || develop}
-function gl() {
+function gpl() {
     BRANCH=develop
     if [ $# -gt 0 ]; then
         BRANCH=$1
     fi
     git pull --no-ff origin ${BRANCH}
 }
-
