@@ -12,9 +12,11 @@ export MAIL=""
 
 export IGNOREEOF=2 # ignore logout by ctrl+d up to twice
 
+stty stop undef # disable ctrl-s
+shopt -s histappend # add history to historyFile appendly instead of overwrite
+
 export HTTP_PROXY=""
 export HTTPS_PROXY=$HTTP_PROXY
-
 export EDITOR="vim"
 
 alias a='awk'
