@@ -113,5 +113,6 @@ function gpl() {
     if [ $# -gt 0 ]; then
         BRANCH=$1
     fi
+    echo "target branch is ${BRANCH}"
     git pull --no-ff origin ${BRANCH}
 }
