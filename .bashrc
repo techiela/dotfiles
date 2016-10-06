@@ -93,12 +93,13 @@ alias ..='d ..'
 alias ~~='d ~'
 alias tf='tail -F'
 alias gs='git status'
-alias gb='git branch -a'
+alias gb='git branch'
 alias gsh='git show'
 alias gl='git log'
 alias ga='git add .'
 alias gc='git commit'
 alias gd='git diff'
+alias gf='git fetch'
 
 function gp() {
     BRANCH=$(git rev-parse --abbrev-ref HEAD)
