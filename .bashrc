@@ -83,7 +83,7 @@ alias 9=''
 alias 0=''
 
 alias Gv='grep -v'
-alias hg='h | grep'
+alias hg='eval $(history | cut -c 8-|peco)'
 alias di='diff'
 alias da='date "+%Y-%m-%d %H:%M:%S"'
 alias ll='l -l'
