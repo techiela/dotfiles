@@ -12,6 +12,9 @@ se smartindent
 se number
 se ruler
 
+noremap H ^
+noremap L $
+
 "show cursorline
 set cursorline
 
