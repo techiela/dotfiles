@@ -2,6 +2,7 @@
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
     editor = vim
+	pager = LESSCHARSET=utf-8 less
 [alias]
 	cl = clone
 	ad = add
@@ -13,6 +14,8 @@
 	ch = checkout
 	pl = pull --no-ff
 	ps = push
+	st = stash
+	me = merge
 [diff]
     patience = true
 [color]
@@ -22,3 +25,5 @@
     branch = auto
     interactive = auto
     grep = auto
+[user]
+	useConfigOnly = true
