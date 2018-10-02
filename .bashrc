@@ -15,9 +15,14 @@ export IGNOREEOF=2 # ignore logout by ctrl+d up to twice
 stty stop undef # disable ctrl-s
 shopt -s histappend # add history to historyFile appendly instead of overwrite
 
-export HTTP_PROXY=""
-export HTTPS_PROXY=$HTTP_PROXY
+export http_proxy=""
+export https_proxy=$http_proxy
 export EDITOR="vim"
+
+export PATH=${HOME}/.rbenv/bin:~/Library/Android/sdk/platform-tools:/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home/bin/:${PATH} && \
+eval "$(rbenv init -)"
+export JAVA_HOME="/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home"
+export _JAVA_OPTIONS='-Dfile.encoding=UTF-8'
 
 alias a='awk'
 alias b='popd > /dev/null' # history back
@@ -100,6 +105,8 @@ alias ga='git add .'
 alias gc='git commit'
 alias gd='git diff'
 alias gf='git fetch'
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+alias updatedb='sudo /usr/libexec/locate.updatedb'
 
 function gp() {
     BRANCH=$(git rev-parse --abbrev-ref HEAD)
@@ -117,3 +124,7 @@ function gpl() {
     echo "target branch is ${BRANCH}"
     git pull --no-ff origin ${BRANCH}
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
