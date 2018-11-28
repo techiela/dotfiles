@@ -1,5 +1,5 @@
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore_global
     attributesfile = ~/.gitattributes
     editor = vim
 	pager = LESSCHARSET=utf-8 less
