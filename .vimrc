@@ -11,6 +11,8 @@ se autoindent
 se smartindent
 se number
 se ruler
+set visualbell
+set noerrorbells
 
 noremap H ^
 noremap L $
