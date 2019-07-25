@@ -7,7 +7,8 @@ if [ -f /etc/bashrc ]; then
 fi
 
 export PS1="\t \u@\h:\w\\$ "
-export LANG=en_US.utf8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export MAIL=""
 
 export IGNOREEOF=2 # ignore logout by ctrl+d up to twice
@@ -19,8 +20,13 @@ export http_proxy=""
 export https_proxy=$http_proxy
 export EDITOR="vim"
 
-export PATH=${HOME}/.rbenv/bin:~/Library/Android/sdk/platform-tools:/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home/bin/:${PATH} && \
+export PYENV_ROOT="$HOME/.pyenv"
+export GOPATH="$HOME/go"
+export GCLOUD_PATH="$HOME/y/google-cloud-sdk"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH=$GCLOUD_PATH/bin:$GOPATH/bin:$PYENV_ROOT/bin:${HOME}/.rbenv/bin:${PATH} && \
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
 export JAVA_HOME="/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home"
 export _JAVA_OPTIONS='-Dfile.encoding=UTF-8'
 
@@ -105,7 +111,7 @@ alias ga='git add .'
 alias gc='git commit'
 alias gd='git diff'
 alias gf='git fetch'
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+source ~/.git-completion.sh
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 
 function gp() {
@@ -117,7 +123,7 @@ function gp() {
 }
 
 function gpl() {
-    BRANCH=develop
+    BRANCH=master
     if [ $# -gt 0 ]; then
         BRANCH=$1
     fi
@@ -128,3 +134,4 @@ function gpl() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
