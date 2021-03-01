@@ -11,6 +11,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export MAIL=""
 
+# bash_history
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+export HISTIGNORE=ls:hg:h
+export HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S, '
+
 export IGNOREEOF=2 # ignore logout by ctrl+d up to twice
 
 stty stop undef # disable ctrl-s
